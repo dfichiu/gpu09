@@ -26,6 +26,9 @@ For the last point, we vary the grid size (numBlocks) from 1 to 16384 in increme
 \section*{2.2 Break-even Kernel Startup Time}
 
 
+How many clock cycles do we have to wait to allow for another kernel launch call (an accuracy within 100 clock cycles is sufficient)? 
+
+
 \section*{2.3 PCIe Data Movements}
 For measuring the memory allocation of pageable vs pinned memory, did we choose a vector size of 1kB, as this seems to be the maximum capacity of the pinned memory.
 The pageable memory allocation is with 0.00us quite fast compared to the memory allocation of pinned memory with 3.03 us.
