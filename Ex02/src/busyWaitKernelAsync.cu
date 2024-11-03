@@ -40,10 +40,23 @@
 
 #include "chTimer.h"
 
+__device__ long long int clockDiff;
+
 __global__
 void
-NullKernel()
+busyWaitKernel(long long int cyclesToBusyWait, bool writeToVariable)
 {
+    long long int start = clock64();
+
+    while ( clock64() -  start < cyclesToBusyWait ) {
+        // Busy-wait
+    }
+
+    long long int end = clock64();
+
+    if ( writeToVariable ) {
+        clockDiff = end - start;
+    }
 }
 
 int
@@ -51,36 +64,31 @@ main()
 {
     const int cIterations = 1000000;
 
-    int numBlocks = 16384;
-    int threadsPerBlock = 1024;
+    long long int cyclesToBusyWait = 0;
+    bool writeToVariable = true;
+    bool run = true;
 
     chTimerTimestamp start, stop;
 
-    printf( "numBlocks,threadsPerBlock,usPerLaunch\n" ); fflush( stdout );
+    printf( "cyclesToBusyWait,usPerLaunch\n" ); fflush( stdout );
 
-    while ( numBlocks > 0) {
-        threadsPerBlock = 1024;
-        while ( threadsPerBlock > 1 ) {
-            chTimerGetTime( &start );
-            for ( int i = 0; i < cIterations; i++ ) {
-                NullKernel<<<numBlocks,threadsPerBlock>>>();
-            }
-            cudaDeviceSynchronize();
-            chTimerGetTime( &stop );
-
-            {
-                double microseconds = 1e6*chTimerElapsedTime( &start, &stop );
-                double usPerLaunch = microseconds / (float) cIterations;
-
-                printf( "%d,%d,%.2f us\n", numBlocks, threadsPerBlock, usPerLaunch );
-                fflush( stdout );
-            }
-
-            threadsPerBlock = threadsPerBlock / 2;
+    while (run) {
+        chTimerGetTime( &start );
+        for ( int i = 0; i < cIterations; i++ ) {
+            busyWaitKernel<<<1,1>>>(cyclesToBusyWait, writeToVariable);
         }
-        
-        numBlocks = numBlocks - 1024;
-    }
-    
-    return 0;
+        cudaDeviceSynchronize();
+        chTimerGetTime( &stop );
+
+        {
+            double microseconds = 1e6*chTimerElapsedTime( &start, &stop );
+            double usPerLaunch = microseconds / (float) cIterations;
+
+            printf( "%llu,%.2f us\n", cyclesToBusyWait, usPerLaunch );
+            fflush( stdout );
+        }
+        cyclesToBusyWait = cyclesToBusyWait + 100;
+    }   
+
+return 0;
 }

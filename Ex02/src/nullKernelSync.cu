@@ -50,24 +50,37 @@ int
 main()
 {
     const int cIterations = 1000000;
-    
-    printf( "Measuring synchronous launch time... " ); fflush( stdout );
+
+    int numBlocks = 16384;
+    int threadsPerBlock = 1024;
 
     chTimerTimestamp start, stop;
 
-    chTimerGetTime( &start );
-    for ( int i = 0; i < cIterations; i++ ) {
-        NullKernel<<<1,1>>>();
-        cudaDeviceSynchronize();  // Synchronize CPU and GPU
+    printf( "numBlocks,threadsPerBlock,usPerLaunch\n" ); fflush( stdout );
+
+    while ( numBlocks > 0) {
+        threadsPerBlock = 1024;
+        while ( threadsPerBlock > 1 ) {
+            chTimerGetTime( &start );
+            for ( int i = 0; i < cIterations; i++ ) {
+                NullKernel<<<numBlocks,threadsPerBlock>>>();
+                cudaDeviceSynchronize();
+            }
+            chTimerGetTime( &stop );
+
+            {
+                double microseconds = 1e6*chTimerElapsedTime( &start, &stop );
+                double usPerLaunch = microseconds / (float) cIterations;
+
+                printf( "%d,%d,%.2f us\n", numBlocks, threadsPerBlock, usPerLaunch );
+                fflush( stdout );
+            }
+
+            threadsPerBlock = threadsPerBlock / 2;
+        }
+        
+        numBlocks = numBlocks - 1024;
     }
-    chTimerGetTime( &stop );
-
-    {
-        double microseconds = 1e6*chTimerElapsedTime( &start, &stop );
-        double usPerLaunch = microseconds / (float) cIterations;
-
-        printf( "%.2f us\n", usPerLaunch );
-    }
-
+    
     return 0;
 }
