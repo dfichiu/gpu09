@@ -1,0 +1,56 @@
+\documentclass{report}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\begin{document}
+\title{GPU Exercise 02 - Group 09}
+\maketitle
+
+
+\section*{2.1 Raw Kernel Startup Time}
+
+The asynchronous kernel statup time (ASKST) of the original program is 0.05 us.
+
+The synchronous kernel startup time (SKST) is 0.06 us.
+
+The ASKST is the time it takes the CPU to launch a kernel on the GPU without waiting for the
+kernel to start or complete. In contrast to that, the SKST is the time it takes for the CPU to issue a command to the GPU and wait until the GPU
+completed executing the kernel (i.e., overhead from CPU-GPU synchronization).
+
+Therefore, to measure the SKST in nullKernelAync.cu, we moved the barrier synchornization inside the for-loop.
+
+For the last point, we vary the grid size (numBlocks) from 1 to 16384 in increments of 1024 and the block size (threadsPerBlock) from 1 to 1024 by using the powers of two.
+
+
+
+
+
+\section*{2.3 PCIe Data Movements}
+For measuring the memory allocation of pageable vs pinned memory, did we choose a vector size of 1kB, as this seems to be the maximum capacity of the pinned memory.
+The pageable memory allocation is with 0.00us quite fast compared to the memory allocation of pinned memory with 3.03 us.
+
+
+
+Pinned Memory
+\begin{center}
+    \begin{tabular}{ c c c }
+        & D2H & H2D \\ 
+     1kb & 7.84 us & 5.76 us \\ 
+     5kb & 8.49 us & 6.18 us \\  
+     10kb &  9.24  us & 6.34 us \\ 
+     50kb & 14.08 us & 11.61 us \\  
+     100kb &  20.85   us & 19.64 us \\ 
+     500kb & 77.35  us &  73.68 us \\    
+     1mb &150.47 us & 141.75 us \\ 
+     10mb & 1085.44 us &  908.99 us \\ 
+     100mb &  10750.17   us & 8568.39 us \\ 
+     1gb & 184770.24 us &  87286.34 us \\ 
+    \end{tabular}
+    \end{center}
+
+    INSERT PLOT?
+
+    putting data onto the device is faster than moving it back to the host, but this difference is negligible. 
+    in the datarsize range below 10kb the duration seems to be constant, but with duration increases linearly with the transfer size.
+

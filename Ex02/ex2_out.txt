@@ -1,0 +1,12 @@
+here16384,1024,0.05 us
+here15360,512,0.05 us
+here14336,256,0.05 us
+here13312,128,0.05 us
+here12288,64,0.05 us
+here11264,32,0.05 us
+here10240,16,0.05 us
+here9216,8,0.05 us
+here8192,4,0.05 us
+here7168,2,0.05 us
+slurmstepd-csg-brook02: error: *** JOB 26383 ON csg-brook02 CANCELLED AT 2024-11-03T00:01:52 ***
+slurmstepd-csg-brook02: error: *** JOB 26386 ON csg-brook02 CANCELLED AT 2024-11-03T00:02:00 ***
