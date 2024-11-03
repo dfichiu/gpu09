@@ -1,0 +1,14 @@
+.vscode
+.vscode-server
+
+.bash_history
+.bash_logout
+.nv
+.cache
+.dotnet
+.bashrc
+.profile
+.wget-hsts
+.ssh
+*.pub
+*_keys
