@@ -1,0 +1,35 @@
+Measuring malloc... 0.00 us
+Allocating pageable memory worked
+Measuring CudaMallocHost 3.12 us
+Allocating pinned memory worked
+Current size 1024
+Measuring D2H 8.09 us
+Measuring H2D 5.89 us
+Current size 5120
+Measuring D2H 8.52 us
+Measuring H2D 6.36 us
+Current size 10240
+Measuring D2H 9.45 us
+Measuring H2D 6.47 us
+Current size 51200
+Measuring D2H 16.17 us
+Measuring H2D 11.78 us
+Current size 102400
+Measuring D2H 24.92 us
+Measuring H2D 19.91 us
+Current size 512000
+Measuring D2H 81.56 us
+Measuring H2D 72.36 us
+Current size 1048576
+Measuring D2H 151.01 us
+Measuring H2D 142.40 us
+Current size 10485760
+Measuring D2H 1080.73 us
+Measuring H2D 908.73 us
+Current size 104857600
+Measuring D2H 10800.45 us
+Measuring H2D 8570.88 us
+Current size 1073741824
+Measuring D2H 184966.58 us
+Measuring H2D 87163.49 us
+Freeing memory worked
