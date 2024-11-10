@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 #include <cstdlib>
 #include <chCommandLine.h>
 #include <chTimer.hpp>
@@ -34,9 +35,9 @@ void printHelp(char *);
 //
 
 
-extern void globalMemCoalescedKernel_Wrapper(dim3 gridDim, dim3 blockDim ,int* d_memoryA ,int* d_memoryB , int memSize /*TODO Parameters*/);
-//extern void globalMemStrideKernel_Wrapper(dim3 gridDim, dim3 blockDim /*TODO Parameters*/);
-//extern void globalMemOffsetKernel_Wrapper(dim3 gridDim, dim3 blockDim /*TODO Parameters*/);
+extern void globalMemCoalescedKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, int* d_memoryB, int N, int memSize);
+ extern void globalMemStrideKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, int* d_memoryB ,int N, int stride);
+extern void globalMemOffsetKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, int* d_memoryB ,int N, int offset);
 
 //
 // Main
@@ -54,9 +55,9 @@ main ( int argc, char * argv[] )
         exit (0);
     }
 
-    std::cout << "***" << std::endl
-              << "*** Starting ..." << std::endl
-              << "***" << std::endl;
+    //std::cout << "***" << std::endl
+    //          << "*** Starting ..." << std::endl
+    //          << "***" << std::endl;
 
     ChTimer memCpyH2DTimer, memCpyD2HTimer, memCpyD2DTimer;
     ChTimer kernelTimer;
@@ -116,7 +117,7 @@ main ( int argc, char * argv[] )
         std::cout << "*** Ignoring size parameter; using kernel launch parameters and stride, size=" << optMemorySize << std::endl;
     } else if ( chCommandLineGetBool("global-offset", argc, argv) ) {
         // determine memory size from kernel launch parameters and stride
-        optMemorySize = optGridSize * optBlockSize + optOffset * sizeof optMemorySize;
+        optMemorySize = (optGridSize * optBlockSize + optOffset) * sizeof optMemorySize;
         std::cout << "*** Ignoring size parameter; using kernel launch parameters and offset, size=" << optMemorySize << std::endl; 
     } else {
         // determine memory size from parameters
@@ -125,7 +126,7 @@ main ( int argc, char * argv[] )
         optMemorySize = optMemorySize != 0 ? optMemorySize : DEFAULT_MEM_SIZE;
     }
 	
-	std::cout << "*** Allocating memory of following size=" << optMemorySize << std::endl;
+	//std::cout << "*** Allocating memory of following size=" << optMemorySize << std::endl;
 
     //
     // Host Memory
@@ -137,7 +138,7 @@ main ( int argc, char * argv[] )
         optUsePinnedMemory = chCommandLineGetBool ( "pinned-memory",argc,argv );
 
     if ( !optUsePinnedMemory ) { // Pageable
-        std::cout << "***" << " Using pageable memory" << std::endl;
+        //std::cout << "***" << " Using pageable memory" << std::endl;
         h_memoryA = static_cast <int*> ( malloc ( static_cast <size_t> ( optMemorySize ) ) );
         h_memoryB = static_cast <int*> ( malloc ( static_cast <size_t> ( optMemorySize ) ) );
     } else { // Pinned
@@ -208,7 +209,16 @@ main ( int argc, char * argv[] )
 
         return -1;
     }
-    int memSize = optMemorySize/ (optBlockSize * optGridSize);
+    // Memory/thread
+    int threadMemSize = std::ceil(optMemorySize / float(optBlockSize * optGridSize));
+    
+    //Debug
+    //std::cout << "totalMemSize = " << optMemorySize << std::endl;
+    //std::cout << "threadMemSize = " << threadMemSize << std::endl;
+    //std::cout << "Threads per block = " << optBlockSize << std::endl;
+    //std::cout << "Number of blocks = " << optGridSize << std::endl;  
+    //std::cout << "max indx = " << (optBlockSize) * (optGridSize) * threadMemSize - 1 << std::endl;
+    
     //
     // Global Memory Tests
     //
@@ -219,11 +229,11 @@ main ( int argc, char * argv[] )
         //
         if ( chCommandLineGetBool ( "global-coalesced", argc, argv ) ) {
 			
-            globalMemCoalescedKernel_Wrapper(grid_dim, block_dim, d_memoryA ,d_memoryB, memSize /*TODO Parameters*/);
-        //} else if ( chCommandLineGetBool ( "global-stride", argc, argv ) ) {
-        //    globalMemStrideKernel_Wrapper(grid_dim, block_dim /*TODO Parameters*/);
-        //} else if ( chCommandLineGetBool ( "global-offset", argc, argv ) ) {
-        //   globalMemOffsetKernel_Wrapper(grid_dim, block_dim /*TODO Parameters*/);
+            globalMemCoalescedKernel_Wrapper(grid_dim, block_dim, d_memoryA ,d_memoryB, optMemorySize, threadMemSize /*TODO Parameters*/);
+        } else if ( chCommandLineGetBool ( "global-stride", argc, argv ) ) {
+           globalMemStrideKernel_Wrapper(grid_dim, block_dim, d_memoryA ,d_memoryB, optMemorySize, optStride);
+        } else if ( chCommandLineGetBool ( "global-offset", argc, argv ) ) {
+           globalMemOffsetKernel_Wrapper(grid_dim, block_dim, d_memoryA ,d_memoryB, optMemorySize,optOffset);
         } else {
             break;
         }
@@ -262,7 +272,7 @@ main ( int argc, char * argv[] )
 
         return -1;
     }
-
+    /*
     // Print Measurement Results
     std::cout   << "Results for cudaMemcpy:" << std::endl
                 << "Size: " << std::setw(10) << optMemorySize << "B";
@@ -280,28 +290,29 @@ main ( int argc, char * argv[] )
                 //<< 1e6 * kernelTimer.getTime(optNumIterations) 
                 //<< " µs" << std::endl
                 << std::endl;
-
+    */
     if ( chCommandLineGetBool ( "global-coalesced", argc, argv ) ) {
-        std::cout << "Coalesced copy of global memory, size=" << std::setw(10) << optMemorySize << ", gDim=" << std::setw(5) << grid_dim.x << ", bDim=" << std::setw(5) << block_dim.x;
-        //std::cout << ", time=" << kernelTimer.getTime(optNumIterations) << 
-        std::cout.precision ( 2 );
-        std::cout << ", bw=" << std::fixed << std::setw(6) << optMemorySize / kernelTimer.getTime(optNumIterations) / (1E09) << "GB/s" << std::endl;
-    }
-    /*
+        std::cout << "CLASSIC" << std::endl;
+        //std::cout << "Coalesced copy of global memory, size=" << std::setw(10) << optMemorySize << ", gDim=" << std::setw(5) << grid_dim.x << ", bDim=" << std::setw(5) << block_dim.x;
+        //std::cout << ", time=" << kernelTimer.getTime(optNumIterations);
+        std::cout <<  std::cout.precision ( 2 );
+        std::cout << "bw= ," << std::fixed << std::setw(6) << optMemorySize / kernelTimer.getTime(optNumIterations) / (1E09) << "GB/s" << std::endl;
+        }
+    
     if ( chCommandLineGetBool ( "global-stride", argc, argv ) ) {
-        std::cout << "Strided(" << std::setw(3) << optStride << ") copy of global memory, size=" << std::setw(10) << optMemorySize << ", gDim=" << std::setw(5) << grid_dim.x << ", bDim=" << std::setw(5) << block_dim.x;
+        std::cout << "Strided(" << std::setw(3) << optStride << std::endl; // ") copy of global memory, size=" << std::setw(10) << optMemorySize << ", gDim=" << std::setw(5) << grid_dim.x << ", bDim=" << std::setw(5) << block_dim.x;
         //std::cout << ", time=" << kernelTimer.getTime(optNumIterations) << 
-        std::cout.precision ( 2 );
+         std::cout << std::cout.precision ( 2 );
         std::cout << ", bw=" << std::fixed << std::setw ( 6 ) << ( grid_dim.x * block_dim.x ) * sizeof (int) / kernelTimer.getTime (optNumIterations ) / ( 1E09 ) << "GB/s" << std::endl;
     }
 
     if ( chCommandLineGetBool ( "global-offset", argc, argv ) ) {
-        std::cout << "Offset(" << std::setw(3) << optOffset << ") copy of global memory, size=" << std::setw(10) << optMemorySize << ", gDim=" << std::setw(5) << grid_dim.x << ", bDim=" << std::setw(5) << block_dim.x;
+        std::cout << "Offset(" << std::setw(3) << optOffset << std::endl;//<< ") copy of global memory, size=" << std::setw(10) << optMemorySize << ", gDim=" << std::setw(5) << grid_dim.x << ", bDim=" << std::setw(5) << block_dim.x;
         //std::cout << ", time=" << kernelTimer.getTime(optNumIterations) << 
-        std::cout.precision ( 2 );
-        std::cout << ", bw=" << std::fixed << std::setw ( 6 ) << ( grid_dim.x * block_dim.x ) * sizeof (int) / kernelTimer.getTime ( optNumIterations ) / ( 1E09 ) << "GB/s" << std::endl;
+        std::cout <<std::cout.precision ( 2 );
+        std::cout << ", bw= ," << std::fixed << std::setw ( 6 ) << ( grid_dim.x * block_dim.x ) * sizeof (int) / kernelTimer.getTime ( optNumIterations ) / ( 1E09 ) << "GB/s" << std::endl;
     }
-    */
+    
     return 0;
 }
 

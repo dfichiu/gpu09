@@ -9,4 +9,16 @@
 
 
 \section*{3.1 Raw Kernel Startup Time}
- 
+as expected the d2d transfer is the fastest. 
+
+\section*{3.2 Global Memory – coalesced thread access}
+We first compared different amounts of thread per block with one block.
+We get the best result at threads per block=512.
+we fix this value now and change the amount of blocks.
+The maximal amount of blocks seems to the best, which is 32.
+We do a final check on the amount of threads per block with a fixed size of 32 blocks.
+If we look at the graph, the throughput gets maximized at 32 blocks with 128 threads per block.
+\section*{3.3 Global Memory – thread access with stride}
+see ex3_stride.sh, the values sadly do not make any sense
+\section*{3.4 Global Memory – thread access with offset}
+see ex3_offset.sh, the values sadly do not make any sense

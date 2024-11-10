@@ -14,41 +14,56 @@
 // Kernels
 //
 
+
+// N = Total memory
+// memSize = Memory/thread
 __global__ void 
-globalMemCoalescedKernel( int d_memoryA[N] ,int d_memoryB[N], int memSize)
-{
-   int indx = blockIdx.x * blockDim.x + threadIdx.x;
-   if (indx + memSize - 1 < N){
-    for (int i=0; i<memSize; i++) {
-        d_memoryB[indx+i] = d_memoryA[indx+i];
+globalMemCoalescedKernel(int* d_memoryA, int* d_memoryB, int N, int memSize){
+    int SIZE_INT = 4;
+    int indx = (blockIdx.x * blockDim.x + threadIdx.x) * memSize;
+    for (int i = 0; i < memSize/SIZE_INT; i++) {
+        if (indx + i < N/SIZE_INT ) {
+            d_memoryB[indx + i] = d_memoryA[indx + i];
         }
    }
 }
 
 void 
-globalMemCoalescedKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA ,int* d_memoryB , int memSize ) {
-	globalMemCoalescedKernel<<< gridDim, blockDim, 0 /*Shared Memory Size*/ >>>( d_memoryA ,d_memoryB,  memSize);
+globalMemCoalescedKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, int* d_memoryB ,int N, int memSize) {
+	globalMemCoalescedKernel<<< gridDim, blockDim, 0 /*Shared Memory Size*/>>> (d_memoryA, d_memoryB, N, memSize);
 }
 
 __global__ void 
-globalMemStrideKernel(/*TODO Parameters*/)
+globalMemStrideKernel(int* d_memoryA, int* d_memoryB ,int N, int stride)
 {
-    return  ;/*TODO Kernel Code*/
+    int SIZE_INT = 4;
+    int indx = (blockIdx.x * blockDim.x + threadIdx.x);
+    
+    if (indx * stride < N/SIZE_INT ) {
+        d_memoryB[indx] = d_memoryA[indx  * stride ];
+    }
+   
 }
 
 void 
-globalMemStrideKernel_Wrapper(dim3 gridDim, dim3 blockDim /*TODO Parameters*/) {
-	globalMemStrideKernel<<< gridDim, blockDim, 0 /*Shared Memory Size*/ >>>( /*TODO Parameters*/);
+globalMemStrideKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, int* d_memoryB ,int N, int stride) {
+	globalMemStrideKernel<<< gridDim, blockDim, 0 /*Shared Memory Size*/ >>>(  d_memoryA,  d_memoryB , N,  stride);
 }
 
 __global__ void 
-globalMemOffsetKernel(/*TODO Parameters*/)
+globalMemOffsetKernel(int* d_memoryA, int* d_memoryB ,int N, int offset)
 {
-    return  ;/*TODO Kernel Code*/
+    int SIZE_INT = 4;
+    int indx = (blockIdx.x * blockDim.x + threadIdx.x);
+    
+    if (indx + offset< N/SIZE_INT ) {
+        d_memoryB[indx] = d_memoryA[indx + offset];
+    }
+   
 }
 
 void 
-globalMemOffsetKernel_Wrapper(dim3 gridDim, dim3 blockDim /*TODO Parameters*/) {
-	globalMemOffsetKernel<<< gridDim, blockDim, 0 /*Shared Memory Size*/ >>>( /*TODO Parameters*/);
+globalMemOffsetKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, int* d_memoryB ,int N, int offset) {
+	globalMemOffsetKernel<<< gridDim, blockDim, 0 /*Shared Memory Size*/ >>>( d_memoryA,  d_memoryB , N,  offset);
 }
 
