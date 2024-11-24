@@ -34,20 +34,19 @@ globalMemCoalescedKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, in
 }
 
 __global__ void 
-globalMemStrideKernel(int* d_memoryA, int* d_memoryB ,int N, int stride)
+globalMemStrideKernel(int* d_memoryA, int* d_memoryB ,int N, int memSize, int stride)
 {
     int SIZE_INT = 4;
-    int indx = (blockIdx.x * blockDim.x + threadIdx.x);
+    int indx = (blockIdx.x * blockDim.x + stride * threadIdx.x);
     
-    if (indx * stride < N/SIZE_INT ) {
-        d_memoryB[indx] = d_memoryA[indx  * stride ];
+    if ((indx) * stride < N/SIZE_INT ) {
+        d_memoryB[(indx)] = d_memoryA[(indx)];
     }
-   
 }
 
 void 
-globalMemStrideKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, int* d_memoryB ,int N, int stride) {
-	globalMemStrideKernel<<< gridDim, blockDim, 0 /*Shared Memory Size*/ >>>(  d_memoryA,  d_memoryB , N,  stride);
+globalMemStrideKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, int* d_memoryB ,int N, int memSize, int stride) {
+	globalMemStrideKernel<<< gridDim, blockDim, 0 /*Shared Memory Size*/ >>>(  d_memoryA,  d_memoryB , N,  memSize,  stride);
 }
 
 __global__ void 

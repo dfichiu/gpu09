@@ -1,0 +1,21 @@
+
+Starting kernel: 1x1024 threads, 49152B shared memory, 10000 iterations
+Copy global->shared, size=     49152, gDim=    1, bDim= 1024, bw=457.28GB/s
+Starting kernel: 1x1 threads, 1024B shared memory, 10000 iterations
+Copy global->shared, size=      1024, gDim=    1, bDim=    1, bw= 54.37GB/s
+Starting kernel: 1x64 threads, 1024B shared memory, 10000 iterations
+Copy global->shared, size=      1024, gDim=    1, bDim=   64, bw= 57.16GB/s
+Starting kernel: 1x1024 threads, 1024B shared memory, 10000 iterations
+Copy global->shared, size=      1024, gDim=    1, bDim= 1024, bw= 52.55GB/s
+Starting kernel: 1x1 threads, 49152B shared memory, 10000 iterations
+Copy global->shared, size=     49152, gDim=    1, bDim=    1, bw=748.68GB/s
+Starting kernel: 1x64 threads, 49152B shared memory, 10000 iterations
+Copy global->shared, size=     49152, gDim=    1, bDim=   64, bw=1430.52GB/s
+Starting kernel: 1x1024 threads, 49152B shared memory, 10000 iterations
+Copy global->shared, size=     49152, gDim=    1, bDim= 1024, bw=439.09GB/s
+Starting kernel: 1x1 threads, 49152B shared memory, 10000 iterations
+Copy shared->global, size=     49152, gDim=    1, bDim=    1, bw=1224.10GB/s
+Starting kernel: 1x64 threads, 49152B shared memory, 10000 iterations
+Copy shared->global, size=     49152, gDim=    1, bDim=   64, bw=1376.28GB/s
+Starting kernel: 1x1024 threads, 49152B shared memory, 10000 iterations
+Copy shared->global, size=     49152, gDim=    1, bDim= 1024, bw=463.15GB/s

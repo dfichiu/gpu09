@@ -12,3 +12,6 @@
 .ssh
 *.pub
 *_keys
+.python_history
+.viminfo
+.lesshst
