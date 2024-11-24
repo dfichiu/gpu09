@@ -62,7 +62,7 @@ int main( int argc, char * argv[] ) {
     initializeMatrixA(A, size);
     initializeMatrixB(B, size);
 	CPUTimer.start();
-    // Add matrices A and B to get matrix C
+    // Multiply matrices A and B to get matrix C
     multMatrices(A, B, C, size);
 	CPUTimer.stop();
     // Print matrices  C if small enough
