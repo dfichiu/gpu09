@@ -322,27 +322,32 @@ main ( int argc, char * argv[] )
 		//std::cout << ", time=" << kernelTimer.getTime(optNumIterations) << 
 		std::cout.precision ( 2 );
 		std::cout << ", bw=" << std::fixed << std::setw(6) << ( optMemorySize * grid_size.x ) / kernelTimer.getTime(optNumIterations) / (1E09) << "GB/s" << std::endl;
-	}
+		}   
 	
 	if ( chCommandLineGetBool ( "shared2global", argc, argv ) ) {
 		std::cout << "Copy shared->global, size=" << std::setw(10) << optMemorySize << ", gDim=" << std::setw(5) << grid_size.x << ", bDim=" << std::setw(5) << block_size.x;
 		//std::cout << ", time=" << kernelTimer.getTime(optNumIterations) << 
 		std::cout.precision ( 2 );
 		std::cout << ", bw=" << std::fixed << std::setw(6) << ( optMemorySize * grid_size.x ) / kernelTimer.getTime(optNumIterations) / (1E09) << "GB/s" << std::endl;
+		//std::cout << ", " << std::fixed << std::setw(6) << ( optMemorySize * grid_size.x ) / kernelTimer.getTime(optNumIterations) / (1E09) ;
+	
 	}
 
 	if ( chCommandLineGetBool ( "shared2register", argc, argv ) ) {
-		std::cout << "Copy shared->register, size=" << std::setw(10) << optMemorySize << ", gDim=" << std::setw(5) << grid_size.x << ", bDim=" << std::setw(5) << block_size.x;
+		//std::cout << "Copy shared->register, size=" << std::setw(10) << optMemorySize << ", gDim=" << std::setw(5) << grid_size.x << ", bDim=" << std::setw(5) << block_size.x;
 		//std::cout << ", time=" << kernelTimer.getTime(optNumIterations) << 
 		std::cout.precision ( 2 );
-		std::cout << ", bw=" << std::fixed << std::setw(6) << ( optMemorySize * grid_size.x ) / kernelTimer.getTime(optNumIterations) / (1E09) << "GB/s" << std::endl;
+		//std::cout << ", bw=" << std::fixed << std::setw(6) << ( optMemorySize * grid_size.x ) / kernelTimer.getTime(optNumIterations) / (1E09) << "GB/s" << std::endl;
+	    std::cout << ", " << std::fixed << std::setw(6) << ( optMemorySize * grid_size.x ) / kernelTimer.getTime(optNumIterations) / (1E09);
 	}
 	
 	if ( chCommandLineGetBool ( "register2shared", argc, argv ) ) {
-		std::cout << "Copy register->shared, size=" << std::setw(10) << optMemorySize << ", gDim=" << std::setw(5) << grid_size.x << ", bDim=" << std::setw(5) << block_size.x;
+		//std::cout << "Copy register->shared, size=" << std::setw(10) << optMemorySize << ", gDim=" << std::setw(5) << grid_size.x << ", bDim=" << std::setw(5) << block_size.x;
 		//std::cout << ", time=" << kernelTimer.getTime(optNumIterations) << 
 		std::cout.precision ( 2 );
-		std::cout << ", bw=" << std::fixed << std::setw(6) << ( optMemorySize * grid_size.x ) / kernelTimer.getTime(optNumIterations) / (1E09) << "GB/s" << std::endl;
+		//std::cout << ", bw=" << std::fixed << std::setw(6) << ( optMemorySize * grid_size.x ) / kernelTimer.getTime(optNumIterations) / (1E09) << "GB/s" << std::endl;
+	    std::cout << ", " << std::fixed << std::setw(6) << ( optMemorySize * grid_size.x ) / kernelTimer.getTime(optNumIterations) / (1E09);
+	
 	}	
 
 	if ( chCommandLineGetBool ( "shared2register_conflict", argc, argv ) ) {

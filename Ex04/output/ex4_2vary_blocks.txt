@@ -1,0 +1,22 @@
+Copy shared->global, size=     49152, gDim=    1, bDim= 1024, bw=359.01GB/s
+, 359.01Copy shared->global, size=     49152, gDim=    2, bDim= 1024, bw=8153.81GB/s
+, 8153.81Copy shared->global, size=     49152, gDim=    4, bDim= 1024, bw=16584.11GB/s
+, 16584.11Copy shared->global, size=     49152, gDim=    8, bDim= 1024, bw=33743.47GB/s
+, 33743.47Copy shared->global, size=     49152, gDim=   16, bDim= 1024, bw=65891.82GB/s
+, 65891.82Copy shared->global, size=     49152, gDim=   32, bDim= 1024, bw=133540.27GB/s
+, 133540.27Copy shared->global, size=     49152, gDim=   64, bDim= 1024, bw=260662.57GB/s
+, 260662.57Copy shared->global, size=     49152, gDim=  128, bDim= 1024, bw=545323.87GB/s
+, 545323.87Copy shared->global, size=     49152, gDim=  256, bDim= 1024, bw=1062010.43GB/s
+, 1062010.43Copy shared->global, size=     49152, gDim=  512, bDim= 1024, bw=2066125.68GB/s
+, 2066125.68Copy shared->global, size=     49152, gDim= 1024, bDim= 1024, bw=4235173.42GB/s
+, 4235173.42Copy shared->global, size=     49152, gDim=    1, bDim= 1024, bw=  0.37GB/s
+Copy shared->global, size=     49152, gDim=    2, bDim= 1024, bw=  7.87GB/s
+Copy shared->global, size=     49152, gDim=    4, bDim= 1024, bw= 16.43GB/s
+Copy shared->global, size=     49152, gDim=    8, bDim= 1024, bw= 32.61GB/s
+Copy shared->global, size=     49152, gDim=   16, bDim= 1024, bw= 64.33GB/s
+Copy shared->global, size=     49152, gDim=   32, bDim= 1024, bw=134.85GB/s
+Copy shared->global, size=     49152, gDim=   64, bDim= 1024, bw=271.35GB/s
+Copy shared->global, size=     49152, gDim=  128, bDim= 1024, bw=528.60GB/s
+Copy shared->global, size=     49152, gDim=  256, bDim= 1024, bw=1091.47GB/s
+Copy shared->global, size=     49152, gDim=  512, bDim= 1024, bw=2023.03GB/s
+Copy shared->global, size=     49152, gDim= 1024, bDim= 1024, bw=3997.66GB/s
