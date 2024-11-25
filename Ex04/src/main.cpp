@@ -222,12 +222,12 @@ main ( int argc, char * argv[] )
 		//
 		// Launch Kernel
 		//
-		std::cout
-			<< "Starting kernel: "
-			<< grid_size.x << "x" << block_size.x << " threads, "
-			<< optMemorySize << "B shared memory, "
-			<< optNumIterations << " iterations"
-			<< std::endl;
+		// std::cout
+		// 	<< "Starting kernel: "
+		// 	<< grid_size.x << "x" << block_size.x << " threads, "
+		// 	<< optMemorySize << "B shared memory, "
+		// 	<< optNumIterations << " iterations"
+		// 	<< std::endl;
 
 		if ( chCommandLineGetBool ( "global2shared", argc, argv ) )
 		{
@@ -354,7 +354,7 @@ main ( int argc, char * argv[] )
 			}
 		}	
 
-		std::cout << "Shared memory bank conflict test, size=" << std::setw(10) << optMemorySize << ", gDim=" << std::setw(5) << grid_size.x << ", bDim=" << std::setw(5) << block_size.x;
+		std::cout << "Shared memory bank conflict test, size=" << std::setw(10) << 32 * 1024 << ", gDim=" << std::setw(5) << grid_size.x << ", bDim=" << std::setw(5) << block_size.x;
 		std::cout << ", stride=" << std::setw(6) << optStride << ", modulo=" << std::setw(6) << optModulo;
 		std::cout << ", clocks=" << std::setw(10) << hClocks << std::endl;
 	}

@@ -34,10 +34,3 @@
 ### Registers to shared ###
 ###########################
 # bin/memCpy --register2shared -s 1024 -i 10000 -g 1 -t 512
-
-######################
-### Bank conflicts ###
-######################
-bin/memCpy --shared2register_conflict -s 1 -i 10 -stride 17 -t 1024
-# bin/memCpy --shared2register_conflict -s 49152 -i 10000 -stride 27 -t 1024
-# bin/memCpy --shared2register_conflict -s 49152 -i 10000 -stride 15 -t 1024
