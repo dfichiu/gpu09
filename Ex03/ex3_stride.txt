@@ -1,6 +1,6 @@
-threadMemSize = 1
+threadMemSize = 4
 CLASSIC
-6bw= ,  0.01GB/s
+6bw= ,  1.50GB/s
 *** Ignoring size parameter; using kernel launch parameters and stride, size=8192
 threadMemSize = 4
 Strided(  2
@@ -8,36 +8,36 @@ Strided(  2
 *** Ignoring size parameter; using kernel launch parameters and stride, size=12288
 threadMemSize = 4
 Strided(  3
-6, bw=  1.46GB/s
+6, bw=  1.50GB/s
 *** Ignoring size parameter; using kernel launch parameters and stride, size=16384
 threadMemSize = 4
 Strided(  4
-6, bw=  1.50GB/s
+6, bw=  1.47GB/s
 *** Ignoring size parameter; using kernel launch parameters and stride, size=20480
 threadMemSize = 4
 Strided(  5
-6, bw=  1.46GB/s
+6, bw=  1.50GB/s
 *** Ignoring size parameter; using kernel launch parameters and stride, size=24576
 threadMemSize = 4
 Strided(  6
-6, bw=  1.49GB/s
+6, bw=  1.46GB/s
 *** Ignoring size parameter; using kernel launch parameters and stride, size=28672
 threadMemSize = 4
 Strided(  7
-6, bw=  1.46GB/s
+6, bw=  1.51GB/s
 *** Ignoring size parameter; using kernel launch parameters and stride, size=32768
 threadMemSize = 4
 Strided(  8
-6, bw=  1.48GB/s
+6, bw=  1.46GB/s
 *** Ignoring size parameter; using kernel launch parameters and stride, size=36864
 threadMemSize = 4
 Strided(  9
-6, bw=  1.44GB/s
-*** Ignoring size parameter; using kernel launch parameters and stride, size=40960
+6, bw=  1.50GB/s
+*** Ignoring size parameter; using kernel launch parameters and stride, size=409600
 threadMemSize = 4
-Strided( 10
-6, bw=  1.49GB/s
+Strided(100
+6, bw=  1.46GB/s
 *** Ignoring size parameter; using kernel launch parameters and stride, size=45056
 threadMemSize = 4
 Strided( 11
-6, bw=  1.46GB/s
+6, bw=  1.50GB/s

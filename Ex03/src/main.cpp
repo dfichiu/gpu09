@@ -301,8 +301,7 @@ main ( int argc, char * argv[] )
     
     if ( chCommandLineGetBool ( "global-stride", argc, argv ) ) {
         std::cout << "Strided(" << std::setw(3) << optStride << std::endl; // ") copy of global memory, size=" << std::setw(10) << optMemorySize << ", gDim=" << std::setw(5) << grid_dim.x << ", bDim=" << std::setw(5) << block_dim.x;
-        //std::cout << ", time=" << kernelTimer.getTime(optNumIterations) << 
-         std::cout << std::cout.precision ( 2 );
+        std::cout <<std::cout.precision ( 2 );
         std::cout << ", bw=" << std::fixed << std::setw ( 6 ) << ( grid_dim.x * block_dim.x ) * sizeof (int) / kernelTimer.getTime (optNumIterations ) / ( 1E09 ) << "GB/s" << std::endl;
     }
 

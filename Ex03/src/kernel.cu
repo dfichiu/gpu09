@@ -36,12 +36,13 @@ globalMemCoalescedKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, in
 __global__ void 
 globalMemStrideKernel(int* d_memoryA, int* d_memoryB ,int N, int memSize, int stride)
 {
+    int indx = (blockIdx.x * blockDim.x + threadIdx.x) * memSize * stride;
     int SIZE_INT = 4;
-    int indx = (blockIdx.x * blockDim.x + stride * threadIdx.x);
     
-    if ((indx) * stride < N/SIZE_INT ) {
-        d_memoryB[(indx)] = d_memoryA[(indx)];
+    if (indx  < N/SIZE_INT ) {
+        d_memoryB[indx ] = d_memoryA[indx ];
     }
+   
 }
 
 void 

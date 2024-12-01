@@ -1,0 +1,51 @@
+### Constant problem size, different number of threads ###
+type,matrix_width,grid_dim,block_dim,t_copy_to_device,t_copy_from_device,t_mm
+0,1024,512,2,0.734088,1.27004,19.8206,
+0,1024,256,4,0.757898,1.25624,9.11121,
+0,1024,128,8,0.742198,1.26151,4.78701,
+0,1024,64,16,0.740688,1.2646,3.85083,
+0,1024,32,32,0.746459,1.24654,2.74505,
+
+
+### Constant no. of threads, different problem size ###
+type,matrix_width,grid_dim,block_dim,t_copy_to_device,t_copy_from_device,t_mm
+0,4,1,32,0.031331,0.01891,1.34834,
+0,8,1,32,0.02966,0.01934,1.54806,
+0,16,1,32,0.03168,0.01308,1.14422,
+0,32,1,32,0.03104,0.01371,1.95109,
+0,64,2,32,0.034241,0.01544,1.01805,
+0,128,4,32,0.04626,0.02265,1.35692,
+0,256,8,32,0.094441,0.134511,1.06141,
+0,512,16,32,0.262153,0.501926,2.03297,
+0,1024,32,32,0.739079,1.26244,3.12811,
+0,2048,64,32,3.15474,3.55091,16.1091,
+0,4096,128,32,11.431,12.1573,114.844,
+0,8192,256,32,44.5439,47.7329,913.188,
+0,16384,512,32,176.072,186.36,7308.3,
+
+
+### CPU times ###
+0,1024,32,32,0.738039,1.29269,3.42893,
+***  CPU time needed for the same Problem : 3510.62 ms
+0,2048,64,32,3.13236,3.43973,16.097,
+***  CPU time needed for the same Problem : 32234.5 ms
+0,4096,128,32,11.4705,12.1672,115.011,
+***  CPU time needed for the same Problem : 293384 ms
+0,4,1,32,0.03056,0.01866,1.67361,
+***  CPU time needed for the same Problem : 0.00031 ms
+0,8,1,32,0.030281,0.01917,1.76137,
+***  CPU time needed for the same Problem : 0.00077 ms
+0,16,1,32,0.032321,0.01333,1.17736,
+***  CPU time needed for the same Problem : 0.00311 ms
+0,32,1,32,0.03185,0.01383,1.25318,
+***  CPU time needed for the same Problem : 0.022371 ms
+0,64,2,32,0.033581,0.01492,1.1166,
+***  CPU time needed for the same Problem : 0.177722 ms
+0,128,4,32,0.045911,0.02195,1.60876,
+***  CPU time needed for the same Problem : 1.4329 ms
+0,256,8,32,0.109062,0.236883,1.30683,
+***  CPU time needed for the same Problem : 28.8078 ms
+0,512,16,32,0.261023,0.513516,2.06472,
+***  CPU time needed for the same Problem : 229.045 ms
+
+

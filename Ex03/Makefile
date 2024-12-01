@@ -26,6 +26,6 @@ rebuild: clean build
 
 # Exercise 3.2
 ./bin/main: ./src/kernel.cu ./src/main.cpp
-	$(NVCC) $(NVCC_FLAGS) -o $@ $^ $(INC) $(LIB)
+	$(NVCC) $(NVCC_FLAGS)  -o $@ $^ $(INC) $(LIB)
  
  

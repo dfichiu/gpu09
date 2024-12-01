@@ -1,0 +1,131 @@
+***
+*** Starting ...
+***
+***
+*** Grid Dim:  10x10x1
+*** Block Dim: 30x30x1
+***
+*** MatrixWidth:300
+*** nonshared
+***
+*** Results:
+***    Matrix Size: 90000
+***    Time to Copy to Device: 0.111691 ms
+***    Copy Bandwidth: 6.44636 GB/s
+***    Time to Copy from Device: 0.190402 ms
+***    Copy Bandwidth: 1.89074 GB/s
+***    Time for Matrix Multiplication: 1.81568 ms
+***
+***  CPU time needed for the same Problem : 16.1781 ms
+***
+*** Starting ...
+***
+***
+*** Grid Dim:  300x300x1
+*** Block Dim: 30x30x1
+***
+*** MatrixWidth:9000
+*** nonshared
+***
+*** Results:
+***    Matrix Size: 81000000
+***    Time to Copy to Device: 53.3182 ms
+***    Copy Bandwidth: 12.1534 GB/s
+***    Time to Copy from Device: 57.5344 ms
+***    Copy Bandwidth: 5.63142 GB/s
+***    Time for Matrix Multiplication: 3173.13 ms
+***
+***
+*** Starting ...
+***
+***
+*** Grid Dim:  300x300x1
+*** Block Dim: 30x30x1
+***
+*** MatrixWidth:9000
+*** Tilewidth:30
+*** shared
+***
+*** Results:
+***    Matrix Size: 81000000
+***    Time to Copy to Device: 53.472 ms
+***    Copy Bandwidth: 12.1185 GB/s
+***    Time to Copy from Device: 58.1319 ms
+***    Copy Bandwidth: 5.57353 GB/s
+***    Time for Matrix Multiplication: 1373.62 ms
+***
+NOW WITHOUT FLAGS***
+*** Starting ...
+***
+***
+*** Grid Dim:  10x10x1
+*** Block Dim: 30x30x1
+***
+*** MatrixWidth:300
+*** nonshared
+***
+*** Results:
+***    Matrix Size: 90000
+***    Time to Copy to Device: 0.697078 ms
+***    Copy Bandwidth: 1.03288 GB/s
+***    Time to Copy from Device: 0.189432 ms
+***    Copy Bandwidth: 1.90042 GB/s
+***    Time for Matrix Multiplication: 38.5104 ms
+***
+***  CPU time needed for the same Problem : 18.7304 ms
+***
+*** Starting ...
+***
+***
+*** Grid Dim:  300x300x1
+*** Block Dim: 30x30x1
+***
+*** MatrixWidth:9000
+*** nonshared
+***
+*** Results:
+***    Matrix Size: 81000000
+***    Time to Copy to Device: 53.3071 ms
+***    Copy Bandwidth: 12.156 GB/s
+***    Time to Copy from Device: 57.1809 ms
+***    Copy Bandwidth: 5.66623 GB/s
+***    Time for Matrix Multiplication: 1667.42 ms
+***
+***
+*** Starting ...
+***
+***
+*** Grid Dim:  300x300x1
+*** Block Dim: 30x30x1
+***
+*** MatrixWidth:9000
+*** Tilewidth:30
+*** shared
+***
+*** Results:
+***    Matrix Size: 81000000
+***    Time to Copy to Device: 53.3285 ms
+***    Copy Bandwidth: 12.1511 GB/s
+***    Time to Copy from Device: 56.565 ms
+***    Copy Bandwidth: 5.72793 GB/s
+***    Time for Matrix Multiplication: 1376.46 ms
+***
+***
+*** Starting ...
+***
+***
+*** Grid Dim:  64x64x1
+*** Block Dim: 16x16x1
+***
+*** MatrixWidth:1024
+*** nonshared
+***
+*** Results:
+***    Matrix Size: 1048576
+***    Time to Copy to Device: 0.736218 ms
+***    Copy Bandwidth: 11.3942 GB/s
+***    Time to Copy from Device: 1.33679 ms
+***    Copy Bandwidth: 3.13761 GB/s
+***    Time for Matrix Multiplication: 4.14197 ms
+***
+***  CPU time needed for the same Problem : 3553.66 ms
