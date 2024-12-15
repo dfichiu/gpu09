@@ -1,0 +1,66 @@
+***
+*** Starting ...
+***
+***RESULTAT CPU:32768
+***
+*** Results:
+***    h_dataOut: 713
+***    Num Elements: 32768
+***    Time to Copy to Device: 0.101111 ms
+***    Copy Bandwidth: 1.29632 GB/s
+***    Time to Copy from Device: 0.01967 ms
+***    Copy Bandwidth: 0.000203355 GB/s
+***    Time for Reduction: 1.92465 ms
+***
+***    Time for CPU Reduction: 0.159241 ms
+***    CPU Reduction Bandwidth: 0.823105 GB/s
+***
+*** Starting ...
+***
+***RESULTAT CPU:65536
+***
+*** Results:
+***    h_dataOut: 1081
+***    Num Elements: 65536
+***    Time to Copy to Device: 0.07371 ms
+***    Copy Bandwidth: 3.55642 GB/s
+***    Time to Copy from Device: 0.019731 ms
+***    Copy Bandwidth: 0.000202727 GB/s
+***    Time for Reduction: 0.436534 ms
+***
+***    Time for CPU Reduction: 0.318143 ms
+***    CPU Reduction Bandwidth: 0.823982 GB/s
+***
+*** Starting ...
+***
+***RESULTAT CPU:131072
+***
+*** Results:
+***    h_dataOut: 1449
+***    Num Elements: 131072
+***    Time to Copy to Device: 0.112861 ms
+***    Copy Bandwidth: 4.64543 GB/s
+***    Time to Copy from Device: 0.01976 ms
+***    Copy Bandwidth: 0.000202429 GB/s
+***    Time for Reduction: 0.436025 ms
+***
+***    Time for CPU Reduction: 0.635918 ms
+***    CPU Reduction Bandwidth: 0.824458 GB/s
+***
+*** Starting ...
+***
+[31m***
+***ERROR*** 9 - invalid configuration argument
+***[0m
+***
+*** Starting ...
+***
+[31m***
+***ERROR*** 9 - invalid configuration argument
+***[0m
+***
+*** Starting ...
+***
+[31m***
+***ERROR*** 9 - invalid configuration argument
+***[0m
