@@ -11,6 +11,10 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:wq
+|2,0,1732537551,,"wq"
+:qa!
+|2,0,1731164637,,"qa!"
 :q
 |2,0,1730657164,,"q"
 
@@ -23,19 +27,136 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
+""-	CHAR	0
+	#
+|3,1,36,0,1,0,1731164606,"#"
 
 # File marks:
-'0  28  0  ~/.git/COMMIT_EDITMSG
-|4,48,28,0,1730657164,"~/.git/COMMIT_EDITMSG"
+'0  70  0  ~/vector_add.cu
+|4,48,70,0,1732537551,"~/vector_add.cu"
+'1  70  0  ~/vector_add.cu
+|4,49,70,0,1732537519,"~/vector_add.cu"
+'2  25  0  ~/.git/COMMIT_EDITMSG
+|4,50,25,0,1732498121,"~/.git/COMMIT_EDITMSG"
+'3  64  0  ~/.git/COMMIT_EDITMSG
+|4,51,64,0,1731164637,"~/.git/COMMIT_EDITMSG"
+'4  64  0  ~/.git/COMMIT_EDITMSG
+|4,52,64,0,1731164637,"~/.git/COMMIT_EDITMSG"
+'5  67  0  ~/.git/COMMIT_EDITMSG
+|4,53,67,0,1730657164,"~/.git/COMMIT_EDITMSG"
+'6  28  0  ~/.git/COMMIT_EDITMSG
+|4,54,28,0,1730657164,"~/.git/COMMIT_EDITMSG"
+'7  67  0  ~/.git/COMMIT_EDITMSG
+|4,55,67,0,1730657164,"~/.git/COMMIT_EDITMSG"
+'8  28  0  ~/.git/COMMIT_EDITMSG
+|4,56,28,0,1730657164,"~/.git/COMMIT_EDITMSG"
 
 # Jumplist (newest first):
+-'  70  0  ~/vector_add.cu
+|4,39,70,0,1732537551,"~/vector_add.cu"
+-'  70  0  ~/vector_add.cu
+|4,39,70,0,1732537519,"~/vector_add.cu"
+-'  1  0  ~/vector_add.cu
+|4,39,1,0,1732537482,"~/vector_add.cu"
+-'  1  0  ~/vector_add.cu
+|4,39,1,0,1732537482,"~/vector_add.cu"
+-'  25  0  ~/.git/COMMIT_EDITMSG
+|4,39,25,0,1732498121,"~/.git/COMMIT_EDITMSG"
+-'  25  0  ~/.git/COMMIT_EDITMSG
+|4,39,25,0,1732498121,"~/.git/COMMIT_EDITMSG"
+-'  25  0  ~/.git/COMMIT_EDITMSG
+|4,39,25,0,1732498121,"~/.git/COMMIT_EDITMSG"
+-'  25  0  ~/.git/COMMIT_EDITMSG
+|4,39,25,0,1732498121,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1732497560,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1732497560,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1732497560,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1732497560,"~/.git/COMMIT_EDITMSG"
+-'  64  0  ~/.git/COMMIT_EDITMSG
+|4,39,64,0,1731164637,"~/.git/COMMIT_EDITMSG"
+-'  64  0  ~/.git/COMMIT_EDITMSG
+|4,39,64,0,1731164637,"~/.git/COMMIT_EDITMSG"
+-'  64  0  ~/.git/COMMIT_EDITMSG
+|4,39,64,0,1731164637,"~/.git/COMMIT_EDITMSG"
+-'  64  0  ~/.git/COMMIT_EDITMSG
+|4,39,64,0,1731164637,"~/.git/COMMIT_EDITMSG"
+-'  64  0  ~/.git/COMMIT_EDITMSG
+|4,39,64,0,1731164637,"~/.git/COMMIT_EDITMSG"
+-'  64  0  ~/.git/COMMIT_EDITMSG
+|4,39,64,0,1731164637,"~/.git/COMMIT_EDITMSG"
+-'  64  0  ~/.git/COMMIT_EDITMSG
+|4,39,64,0,1731164637,"~/.git/COMMIT_EDITMSG"
+-'  64  0  ~/.git/COMMIT_EDITMSG
+|4,39,64,0,1731164637,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1731164593,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1731164593,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1731164593,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1731164593,"~/.git/COMMIT_EDITMSG"
+-'  67  0  ~/.git/COMMIT_EDITMSG
+|4,39,67,0,1730657164,"~/.git/COMMIT_EDITMSG"
 -'  28  0  ~/.git/COMMIT_EDITMSG
 |4,39,28,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  67  0  ~/.git/COMMIT_EDITMSG
+|4,39,67,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  28  0  ~/.git/COMMIT_EDITMSG
+|4,39,28,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  67  0  ~/.git/COMMIT_EDITMSG
+|4,39,67,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  28  0  ~/.git/COMMIT_EDITMSG
+|4,39,28,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  67  0  ~/.git/COMMIT_EDITMSG
+|4,39,67,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  28  0  ~/.git/COMMIT_EDITMSG
+|4,39,28,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  67  0  ~/.git/COMMIT_EDITMSG
+|4,39,67,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  28  0  ~/.git/COMMIT_EDITMSG
+|4,39,28,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  67  0  ~/.git/COMMIT_EDITMSG
+|4,39,67,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  28  0  ~/.git/COMMIT_EDITMSG
+|4,39,28,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  67  0  ~/.git/COMMIT_EDITMSG
+|4,39,67,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  28  0  ~/.git/COMMIT_EDITMSG
+|4,39,28,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  67  0  ~/.git/COMMIT_EDITMSG
+|4,39,67,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  28  0  ~/.git/COMMIT_EDITMSG
+|4,39,28,0,1730657164,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1730657147,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1730657147,"~/.git/COMMIT_EDITMSG"
+-'  1  0  ~/.git/COMMIT_EDITMSG
+|4,39,1,0,1730657147,"~/.git/COMMIT_EDITMSG"
 -'  1  0  ~/.git/COMMIT_EDITMSG
 |4,39,1,0,1730657147,"~/.git/COMMIT_EDITMSG"
 
 # History of marks within files (newest to oldest):
 
+> ~/vector_add.cu
+	*	1732537549	0
+	"	70	0
+	^	70	0
+	.	22	0
+	+	69	1
+	+	22	0
+
 > ~/.git/COMMIT_EDITMSG
-	*	1730657162	0
-	"	28	0
+	*	1732497865	0
+	"	25	0
+	^	9	48
+	.	9	47
+	+	20	34
+	+	6	1
+	+	63	6
+	+	9	47

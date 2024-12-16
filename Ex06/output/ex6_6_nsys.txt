@@ -1,0 +1,71 @@
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+***
+*** Starting ...
+***
+*** Final reduction kernel
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 1.04858e+06
+***    Num Elements: 1048576
+***    Time to Copy to Device: 0.538547 ms
+***    Copy Bandwidth: 7.78819 GB/s
+***    Time to Copy from Device: 0.0259 ms
+***    Copy Bandwidth: 0.00015444 GB/s
+***    Time for GPU Reduction: 0.854111 ms
+***    GPU Reduction Bandwidth: 4.91072 GB/s
+***
+Generating '/tmp/nsys-report-1a68.qdstrm'
+
+[1/1] [0%                          ] reduction.nsys-rep
+[1/1] [0%                          ] reduction.nsys-rep
+[1/1] [========42%                 ] reduction.nsys-rep
+[1/1] [====================84%     ] reduction.nsys-rep
+[1/1] [=====================88%    ] reduction.nsys-rep
+[1/1] [======================92%   ] reduction.nsys-rep
+[1/1] [=======================95%  ] reduction.nsys-rep
+[1/1] [=======================96%  ] reduction.nsys-rep
+[1/1] [========================100%] reduction.nsys-rep
+[1/1] [========================100%] reduction.nsys-rep
+Generated:
+    /csghome/gpu09/Ex06/./reduction.nsys-rep
+WARNING: CPU IP/backtrace sampling not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+WARNING: CPU context switch tracing not supported, disabling.
+Try the 'nsys status --environment' command to learn more.
+
+***
+*** Starting ...
+***
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 1.04858e+06
+***    Num Elements: 1048576
+***    Time to Copy to Device: 0.538967 ms
+***    Copy Bandwidth: 7.78212 GB/s
+***    Time to Copy from Device: 0.01136 ms
+***    Copy Bandwidth: 0.000352113 GB/s
+***    Time for GPU Reduction: 2.30441 ms
+***    GPU Reduction Bandwidth: 1.82012 GB/s
+***
+Generating '/tmp/nsys-report-20e8.qdstrm'
+
+[1/1] [0%                          ] thrust.nsys-rep
+[1/1] [0%                          ] thrust.nsys-rep
+[1/1] [========42%                 ] thrust.nsys-rep
+[1/1] [====================85%     ] thrust.nsys-rep
+[1/1] [=====================88%    ] thrust.nsys-rep
+[1/1] [======================90%   ] thrust.nsys-rep
+[1/1] [======================91%   ] thrust.nsys-rep
+[1/1] [=======================96%  ] thrust.nsys-rep
+[1/1] [========================100%] thrust.nsys-rep
+[1/1] [========================100%] thrust.nsys-rep
+Generated:
+    /csghome/gpu09/Ex06/./thrust.nsys-rep

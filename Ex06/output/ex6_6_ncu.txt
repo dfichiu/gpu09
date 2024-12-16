@@ -1,0 +1,86 @@
+***
+*** Starting ...
+***
+==PROF== Connected to process 1356830 (/csghome/gpu09/Ex06/bin/reduction)
+*** Initial reduction kernel 
+==PROF== Profiling "initial_Kernel" - 0: 0%....50%....100% - 9 passes
+==PROF== Profiling "initial_Kernel" - 1: 0%....50%....100% - 9 passes
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 1.26814e+09
+***    Num Elements: 1048576
+***    Time to Copy to Device: 0.573117 ms
+***    Copy Bandwidth: 7.31841 GB/s
+***    Time to Copy from Device: 0.03392 ms
+***    Copy Bandwidth: 0.000117925 GB/s
+***    Time for GPU Reduction: 3494.3 ms
+***    GPU Reduction Bandwidth: 0.00120033 GB/s
+***
+==PROF== Disconnected from process 1356830
+==PROF== Report: /csghome/gpu09/Ex06/./default-ncu-initial.ncu-rep
+***
+*** Starting ...
+***
+==PROF== Connected to process 1356909 (/csghome/gpu09/Ex06/bin/reduction)
+*** Final reduction kernel
+==PROF== Profiling "reduction_Kernel" - 0: 0%....50%....100% - 9 passes
+==PROF== Profiling "reduction_Kernel" - 1: 0%....50%....100% - 9 passes
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 1.04858e+06
+***    Num Elements: 1048576
+***    Time to Copy to Device: 0.567747 ms
+***    Copy Bandwidth: 7.38763 GB/s
+***    Time to Copy from Device: 0.034011 ms
+***    Copy Bandwidth: 0.000117609 GB/s
+***    Time for GPU Reduction: 3745.46 ms
+***    GPU Reduction Bandwidth: 0.00111984 GB/s
+***
+==PROF== Disconnected from process 1356909
+==PROF== Report: /csghome/gpu09/Ex06/./default-ncu-final.ncu-rep
+***
+*** Starting ...
+***
+==PROF== Connected to process 1356991 (/csghome/gpu09/Ex06/bin/reduction)
+*** Initial reduction kernel 
+==WARNING== Unable to access the following 40 metrics: nvlrx__bytes.avg, nvlrx__bytes.avg.pct_of_peak_sustained_elapsed, nvlrx__bytes.avg.per_second, nvlrx__bytes.max, nvlrx__bytes.max.pct_of_peak_sustained_elapsed, nvlrx__bytes.max.per_second, nvlrx__bytes.min, nvlrx__bytes.min.pct_of_peak_sustained_elapsed, nvlrx__bytes.min.per_second, nvlrx__bytes.sum, nvlrx__bytes.sum.pct_of_peak_sustained_elapsed, nvlrx__bytes.sum.per_second, nvlrx__bytes_data_protocol.avg, nvlrx__bytes_data_protocol.max, nvlrx__bytes_data_protocol.min, nvlrx__bytes_data_protocol.sum, nvlrx__bytes_data_user.avg, nvlrx__bytes_data_user.max, nvlrx__bytes_data_user.min, nvlrx__bytes_data_user.sum, nvltx__bytes.avg, nvltx__bytes.avg.pct_of_peak_sustained_elapsed, nvltx__bytes.avg.per_second, nvltx__bytes.max, nvltx__bytes.max.pct_of_peak_sustained_elapsed, nvltx__bytes.max.per_second, nvltx__bytes.min, nvltx__bytes.min.pct_of_peak_sustained_elapsed, nvltx__bytes.min.per_second, nvltx__bytes.sum, nvltx__bytes.sum.pct_of_peak_sustained_elapse==PROF== Profiling "initial_Kernel" - 0: 0%....50%....100% - 30 passes
+==PROF== Profiling "initial_Kernel" - 1: 0%....50%....100% - 30 passes
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 1.21791e+12
+***    Num Elements: 1048576
+***    Time to Copy to Device: 0.565327 ms
+***    Copy Bandwidth: 7.41925 GB/s
+***    Time to Copy from Device: 0.033081 ms
+***    Copy Bandwidth: 0.000120915 GB/s
+***    Time for GPU Reduction: 11638.8 ms
+***    GPU Reduction Bandwidth: 0.000360374 GB/s
+***
+==PROF== Disconnected from process 1356991
+==PROF== Report: /csghome/gpu09/Ex06/./all-ncu-initial.ncu-rep
+
+
+***
+*** Starting ...
+***
+==PROF== Connected to process 1357123 (/csghome/gpu09/Ex06/bin/reduction)
+*** Final reduction kernel
+==WARNING== Unable to access the following 40 metrics: nvlrx__bytes.avg, nvlrx__bytes.avg.pct_of_peak_sustained_elapsed, nvlrx__bytes.avg.per_second, nvlrx__bytes.max, nvlrx__bytes.max.pct_of_peak_sustained_elapsed, nvlrx__bytes.max.per_second, nvlrx__bytes.min, nvlrx__bytes.min.pct_of_peak_sustained_elapsed, nvlrx__bytes.min.per_second, nvlrx__bytes.sum, nvlrx__bytes.sum.pct_of_peak_sustained_elapsed, nvlrx__bytes.sum.per_second, nvlrx__bytes_data_protocol.avg, nvlrx__bytes_data_protocol.max, nvlrx__bytes_data_protocol.min, nvlrx__bytes_data_protocol.sum, nvlrx__bytes_data_user.avg, nvlrx__bytes_data_user.max, nvlrx__bytes_data_user.min, nvlrx__bytes_data_user.sum, nvltx__bytes.avg, nvltx__bytes.avg.pct_of_peak_sustained_elapsed, nvltx__bytes.avg.per_second, nvltx__bytes.max, nvltx__bytes.max.pct_of_peak_sustained_elapsed, nvltx__bytes.max.per_second, nvltx__bytes.min, nvltx__bytes.min.pct_of_peak_sustained_elapsed, nvltx__bytes.min.per_second, nvltx__bytes.sum, nvltx__bytes.sum.pct_of_peak_sustained_elapse==PROF== Profiling "reduction_Kernel" - 0: 0%....50%....100% - 30 passes
+==PROF== Profiling "reduction_Kernel" - 1: 0%....50%....100% - 30 passes
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 1.04858e+06
+***    Num Elements: 1048576
+***    Time to Copy to Device: 0.566977 ms
+***    Copy Bandwidth: 7.39766 GB/s
+***    Time to Copy from Device: 0.032811 ms
+***    Copy Bandwidth: 0.00012191 GB/s
+***    Time for GPU Reduction: 11305.2 ms
+***    GPU Reduction Bandwidth: 0.000371006 GB/s
+***
+==PROF== Disconnected from process 1357123
+==PROF== Report: /csghome/gpu09/Ex06/./all-ncu-final.ncu-rep

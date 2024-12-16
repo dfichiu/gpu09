@@ -70,7 +70,7 @@ main(int argc, char * argv[])
 		exit(0);
 	}
 
-	std::cout << "***" << std::endl
+	if (!chCommandLineGetBool("repo", argc, argv)) std::cout << "***" << std::endl
 			  << "*** Starting ..." << std::endl
 			  << "***" << std::endl;
 
@@ -103,9 +103,7 @@ main(int argc, char * argv[])
 				(malloc(static_cast<size_t>(numElements * sizeof(*h_dataIn))));
 		h_dataOut = static_cast<float*>
 				(malloc(static_cast<size_t>(sizeof(*h_dataOut))));
-	}
-	else
-	{
+	} else {
 		// Pinned
 		cudaMallocHost(&h_dataIn, 
 				static_cast<size_t>(numElements * sizeof(*h_dataIn)));
@@ -172,21 +170,24 @@ main(int argc, char * argv[])
 	}
 
 	gridSize = ceil(static_cast<float>(numElements) / static_cast<float>(blockSize));
-	// std::cout << "** GRID DIM" << gridSize << std::endl;/
+
+	// std::cout << "** GRID DIM" << gridSize << std::endl;
 	// std::cout << "** BLOCK DIM" << blockSize << std::endl;
+
 	dim3 grid_dim = dim3(gridSize);
 	dim3 block_dim = dim3(blockSize);
 
 	kernelTimer.start();
 	
 	if (chCommandLineGetBool("thrust", argc, argv)) {
+		if (!chCommandLineGetBool("repo", argc, argv)) std::cout<< "*** Thrust kernel"<< std::endl;
 		thrust_reduction_Wrapper(numElements, d_dataIn, d_dataOut);
 	} else if (chCommandLineGetBool("init", argc, argv)) {
-		std::cout<< "*** Initial kernel "<< std::endl;
+		if (!chCommandLineGetBool("repo", argc, argv)) std::cout<< "*** Initial reduction kernel "<< std::endl;
 		initial_Kernel_Wrapper(grid_dim, block_dim, numElements, d_dataIn, d_dataOut);
 		initial_Kernel_Wrapper(1, grid_dim, gridSize, d_dataOut, d_dataOut);
 	} else if (chCommandLineGetBool("optimized", argc, argv)) {
-		std::cout<< "*** Optimized kernel"<< std::endl;
+		if (!chCommandLineGetBool("repo", argc, argv)) std::cout<< "*** Optimized reduction kernel"<< std::endl;
 		optimized_Kernel_Wrapper(
 			grid_dim,
 			block_dim,
@@ -204,7 +205,7 @@ main(int argc, char * argv[])
 			d_dataOut
 		);
 	} else {
-		std::cout<< "*** Reduction kernel"<< std::endl;
+		if (!chCommandLineGetBool("repo", argc, argv)) std::cout<< "*** Final reduction kernel"<< std::endl;
 		reduction_Kernel_Wrapper(
 			grid_dim,
 			block_dim,
@@ -251,7 +252,6 @@ main(int argc, char * argv[])
 
 	memCpyD2HTimer.stop();
 
-
 	
 	ChTimer CPUTimer;
 	
@@ -268,6 +268,18 @@ main(int argc, char * argv[])
 	}
 	CPUTimer.stop();
 	delete arr;
+
+	if (chCommandLineGetBool("repo", argc, argv)) {
+		std::cout << numElements<<","
+		<< 1e3 * memCpyH2DTimer.getTime()<<"," 
+		<< 1e3 * memCpyD2HTimer.getTime()<<","
+		<< 1e3 * kernelTimer.getTime()<<",";
+		if (chCommandLineGetBool("cpu", argc, argv)) {
+			std::cout <<  1e3 * CPUTimer.getTime() << std::endl;
+		}
+		else std::cout << std::endl;
+	}
+	else{
 
 	
 	std::cout << "***RESULTAT CPU:" << result<<std::endl; 
@@ -293,14 +305,14 @@ main(int argc, char * argv[])
 				<< " GB/s" << std::endl
 			  << "***" << std::endl;
 
-	if (chCommandLineGetBool("cpu", argc, argv)) {
-		std::cout << "***    Time for CPU Reduction: " << 1e3 * CPUTimer.getTime()
-				    << " ms" << std::endl
-				  << "***    CPU Reduction Bandwidth: " 
-			  	    << 1e-9 * CPUTimer.getBandwidth(numElements * sizeof(float))
-				    << " GB/s" << std::endl;
+		if (chCommandLineGetBool("cpu", argc, argv)) {
+			std::cout << "***    Time for CPU Reduction: " << 1e3 * CPUTimer.getTime()
+						<< " ms" << std::endl
+					<< "***    CPU Reduction Bandwidth: " 
+						<< 1e-9 * CPUTimer.getBandwidth(numElements * sizeof(float))
+						<< " GB/s" << std::endl;
+		}
 	}
-
 	// Free Memory
 	if (!pinnedMemory)
 	{

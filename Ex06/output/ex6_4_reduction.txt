@@ -1,0 +1,176 @@
+***
+*** Starting ...
+***
+*** Final reduction kernel
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 1024
+***    Num Elements: 1024
+***    Time to Copy to Device: 0.029881 ms
+***    Copy Bandwidth: 0.137077 GB/s
+***    Time to Copy from Device: 0.01927 ms
+***    Copy Bandwidth: 0.000207577 GB/s
+***    Time for GPU Reduction: 0.521986 ms
+***    GPU Reduction Bandwidth: 0.00784695 GB/s
+***
+***
+*** Starting ...
+***
+*** Final reduction kernel
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 2048
+***    Num Elements: 2048
+***    Time to Copy to Device: 0.031801 ms
+***    Copy Bandwidth: 0.257602 GB/s
+***    Time to Copy from Device: 0.020171 ms
+***    Copy Bandwidth: 0.000198304 GB/s
+***    Time for GPU Reduction: 0.528106 ms
+***    GPU Reduction Bandwidth: 0.015512 GB/s
+***
+***
+*** Starting ...
+***
+*** Final reduction kernel
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 4096
+***    Num Elements: 4096
+***    Time to Copy to Device: 0.033491 ms
+***    Copy Bandwidth: 0.489206 GB/s
+***    Time to Copy from Device: 0.01907 ms
+***    Copy Bandwidth: 0.000209754 GB/s
+***    Time for GPU Reduction: 0.519386 ms
+***    GPU Reduction Bandwidth: 0.0315449 GB/s
+***
+***
+*** Starting ...
+***
+*** Final reduction kernel
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 8192
+***    Num Elements: 8192
+***    Time to Copy to Device: 0.03584 ms
+***    Copy Bandwidth: 0.914286 GB/s
+***    Time to Copy from Device: 0.01874 ms
+***    Copy Bandwidth: 0.000213447 GB/s
+***    Time for GPU Reduction: 0.532997 ms
+***    GPU Reduction Bandwidth: 0.0614788 GB/s
+***
+***
+*** Starting ...
+***
+*** Final reduction kernel
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 16384
+***    Num Elements: 16384
+***    Time to Copy to Device: 0.044511 ms
+***    Copy Bandwidth: 1.47236 GB/s
+***    Time to Copy from Device: 0.02049 ms
+***    Copy Bandwidth: 0.000195217 GB/s
+***    Time for GPU Reduction: 0.525456 ms
+***    GPU Reduction Bandwidth: 0.124722 GB/s
+***
+***
+*** Starting ...
+***
+*** Final reduction kernel
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 32768
+***    Num Elements: 32768
+***    Time to Copy to Device: 0.05225 ms
+***    Copy Bandwidth: 2.50856 GB/s
+***    Time to Copy from Device: 0.02053 ms
+***    Copy Bandwidth: 0.000194837 GB/s
+***    Time for GPU Reduction: 0.531236 ms
+***    GPU Reduction Bandwidth: 0.24673 GB/s
+***
+***
+*** Starting ...
+***
+*** Final reduction kernel
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 65536
+***    Num Elements: 65536
+***    Time to Copy to Device: 0.072701 ms
+***    Copy Bandwidth: 3.60578 GB/s
+***    Time to Copy from Device: 0.018491 ms
+***    Copy Bandwidth: 0.000216321 GB/s
+***    Time for GPU Reduction: 2.92222 ms
+***    GPU Reduction Bandwidth: 0.0897073 GB/s
+***
+***
+*** Starting ...
+***
+*** Final reduction kernel
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 131072
+***    Num Elements: 131072
+***    Time to Copy to Device: 0.110781 ms
+***    Copy Bandwidth: 4.73265 GB/s
+***    Time to Copy from Device: 0.01872 ms
+***    Copy Bandwidth: 0.000213675 GB/s
+***    Time for GPU Reduction: 0.523047 ms
+***    GPU Reduction Bandwidth: 1.00237 GB/s
+***
+***
+*** Starting ...
+***
+*** Final reduction kernel
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 262144
+***    Num Elements: 262144
+***    Time to Copy to Device: 0.192213 ms
+***    Copy Bandwidth: 5.45528 GB/s
+***    Time to Copy from Device: 0.018921 ms
+***    Copy Bandwidth: 0.000211405 GB/s
+***    Time for GPU Reduction: 0.538076 ms
+***    GPU Reduction Bandwidth: 1.94875 GB/s
+***
+***
+*** Starting ...
+***
+*** Final reduction kernel
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 524288
+***    Num Elements: 524288
+***    Time to Copy to Device: 0.312014 ms
+***    Copy Bandwidth: 6.72134 GB/s
+***    Time to Copy from Device: 0.01956 ms
+***    Copy Bandwidth: 0.000204499 GB/s
+***    Time for GPU Reduction: 1.83017 ms
+***    GPU Reduction Bandwidth: 1.14588 GB/s
+***
+***
+*** Starting ...
+***
+*** Final reduction kernel
+***RESULTAT CPU:0
+***
+*** Results:
+***    h_dataOut: 1.04858e+06
+***    Num Elements: 1048576
+***    Time to Copy to Device: 0.496056 ms
+***    Copy Bandwidth: 8.4553 GB/s
+***    Time to Copy from Device: 0.018511 ms
+***    Copy Bandwidth: 0.000216088 GB/s
+***    Time for GPU Reduction: 0.583187 ms
+***    GPU Reduction Bandwidth: 7.19204 GB/s
+***
