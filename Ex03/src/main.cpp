@@ -36,7 +36,7 @@ void printHelp(char *);
 
 
 extern void globalMemCoalescedKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, int* d_memoryB, int N, int memSize);
-extern void globalMemStrideKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, int* d_memoryB ,int N, int memSize, int stride);
+extern void globalMemStrideKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, int* d_memoryB ,int N, int stride);
 extern void globalMemOffsetKernel_Wrapper(dim3 gridDim, dim3 blockDim, int* d_memoryA, int* d_memoryB ,int N, int offset);
 
 //
@@ -113,11 +113,11 @@ main ( int argc, char * argv[] )
 
     if ( chCommandLineGetBool("global-stride", argc, argv) ) {
         // determine memory size from kernel launch parameters and stride
-        optMemorySize = optGridSize * optBlockSize * optStride * sizeof optMemorySize;
+        optMemorySize = optGridSize * optBlockSize * optStride * sizeof(int);
         std::cout << "*** Ignoring size parameter; using kernel launch parameters and stride, size=" << optMemorySize << std::endl;
     } else if ( chCommandLineGetBool("global-offset", argc, argv) ) {
         // determine memory size from kernel launch parameters and stride
-        optMemorySize = (optGridSize * optBlockSize + optOffset) * sizeof optMemorySize;
+        optMemorySize = (optGridSize * optBlockSize + optOffset) * sizeof(int);
         std::cout << "*** Ignoring size parameter; using kernel launch parameters and offset, size=" << optMemorySize << std::endl; 
     } else {
         // determine memory size from parameters
@@ -213,10 +213,10 @@ main ( int argc, char * argv[] )
     int threadMemSize = std::ceil(optMemorySize / float(optBlockSize * optGridSize * optStride));
     
     //Debug
-    //std::cout << "totalMemSize = " << optMemorySize << std::endl;
+    std::cout << "totalMemSize = " << optMemorySize << std::endl;
     std::cout << "threadMemSize = " << threadMemSize << std::endl;
-    //std::cout << "Threads per block = " << optBlockSize << std::endl;
-    //std::cout << "Number of blocks = " << optGridSize << std::endl;  
+    std::cout << "Threads per block = " << optBlockSize << std::endl;
+    std::cout << "Number of blocks = " << optGridSize << std::endl;  
     //std::cout << "max indx = " << (optBlockSize) * (optGridSize) * threadMemSize - 1 << std::endl;
     
     //
@@ -231,7 +231,7 @@ main ( int argc, char * argv[] )
 			
             globalMemCoalescedKernel_Wrapper(grid_dim, block_dim, d_memoryA ,d_memoryB, optMemorySize, threadMemSize /*TODO Parameters*/);
         } else if ( chCommandLineGetBool ( "global-stride", argc, argv ) ) {
-           globalMemStrideKernel_Wrapper(grid_dim, block_dim, d_memoryA ,d_memoryB, optMemorySize,  threadMemSize, optStride);
+           globalMemStrideKernel_Wrapper(grid_dim, block_dim, d_memoryA ,d_memoryB, optMemorySize,  optStride);
         } else if ( chCommandLineGetBool ( "global-offset", argc, argv ) ) {
            globalMemOffsetKernel_Wrapper(grid_dim, block_dim, d_memoryA ,d_memoryB, optMemorySize,optOffset);
         } else {

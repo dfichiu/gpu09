@@ -14,3 +14,5 @@ do
  
 done
  
+# Task 7.3
+# bin/nbody  -s 200000 -t 1024 -report

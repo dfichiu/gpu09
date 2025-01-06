@@ -12,4 +12,6 @@ do
     bin/nbody  -s $((2 ** pow)) -report -SOA
  
 done
- 
+
+# Task 7.3
+# bin/nbody  -s 200000 -t 1024 -report -SOA

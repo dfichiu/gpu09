@@ -1,0 +1,55 @@
+totalMemSize = 4096
+threadMemSize = 4
+Threads per block = 1024
+Number of blocks = 1
+CLASSIC
+6bw= ,  1.47GB/s
+*** Ignoring size parameter; using kernel launch parameters and stride, size=16384
+totalMemSize = 16384
+threadMemSize = 4
+Threads per block = 1024
+Number of blocks = 1
+Strided(  4
+6, bw=  1.48GB/s
+*** Ignoring size parameter; using kernel launch parameters and stride, size=32768
+totalMemSize = 32768
+threadMemSize = 4
+Threads per block = 1024
+Number of blocks = 1
+Strided(  8
+6, bw=  1.27GB/s
+*** Ignoring size parameter; using kernel launch parameters and stride, size=65536
+totalMemSize = 65536
+threadMemSize = 4
+Threads per block = 1024
+Number of blocks = 1
+Strided( 16
+6, bw=  1.16GB/s
+*** Ignoring size parameter; using kernel launch parameters and stride, size=131072
+totalMemSize = 131072
+threadMemSize = 4
+Threads per block = 1024
+Number of blocks = 1
+Strided( 32
+6, bw=  0.88GB/s
+*** Ignoring size parameter; using kernel launch parameters and stride, size=262144
+totalMemSize = 262144
+threadMemSize = 4
+Threads per block = 1024
+Number of blocks = 1
+Strided( 64
+6, bw=  0.89GB/s
+*** Ignoring size parameter; using kernel launch parameters and stride, size=524288
+totalMemSize = 524288
+threadMemSize = 4
+Threads per block = 1024
+Number of blocks = 1
+Strided(128
+6, bw=  0.89GB/s
+*** Ignoring size parameter; using kernel launch parameters and stride, size=1048576
+totalMemSize = 1048576
+threadMemSize = 4
+Threads per block = 1024
+Number of blocks = 1
+Strided(256
+6, bw=  0.89GB/s

@@ -1,0 +1,83 @@
+totalMemSize = 512
+threadMemSize = 1
+Threads per block = 1024
+Number of blocks = 1
+CLASSIC
+6bw= ,  0.18GB/s
+*** Ignoring size parameter; using kernel launch parameters and offset, size=4100
+totalMemSize = 4100
+threadMemSize = 5
+Threads per block = 1024
+Number of blocks = 1
+Offset(  1
+6, bw= ,  1.47GB/s
+*** Ignoring size parameter; using kernel launch parameters and offset, size=4104
+totalMemSize = 4104
+threadMemSize = 5
+Threads per block = 1024
+Number of blocks = 1
+Offset(  2
+6, bw= ,  1.46GB/s
+*** Ignoring size parameter; using kernel launch parameters and offset, size=4112
+totalMemSize = 4112
+threadMemSize = 5
+Threads per block = 1024
+Number of blocks = 1
+Offset(  4
+6, bw= ,  1.46GB/s
+*** Ignoring size parameter; using kernel launch parameters and offset, size=4128
+totalMemSize = 4128
+threadMemSize = 5
+Threads per block = 1024
+Number of blocks = 1
+Offset(  8
+6, bw= ,  1.46GB/s
+*** Ignoring size parameter; using kernel launch parameters and offset, size=4160
+totalMemSize = 4160
+threadMemSize = 5
+Threads per block = 1024
+Number of blocks = 1
+Offset( 16
+6, bw= ,  1.46GB/s
+*** Ignoring size parameter; using kernel launch parameters and offset, size=4224
+totalMemSize = 4224
+threadMemSize = 5
+Threads per block = 1024
+Number of blocks = 1
+Offset( 32
+6, bw= ,  1.46GB/s
+*** Ignoring size parameter; using kernel launch parameters and offset, size=4352
+totalMemSize = 4352
+threadMemSize = 5
+Threads per block = 1024
+Number of blocks = 1
+Offset( 64
+6, bw= ,  1.46GB/s
+*** Ignoring size parameter; using kernel launch parameters and offset, size=4608
+totalMemSize = 4608
+threadMemSize = 5
+Threads per block = 1024
+Number of blocks = 1
+Offset(128
+6, bw= ,  1.48GB/s
+*** Ignoring size parameter; using kernel launch parameters and offset, size=5120
+totalMemSize = 5120
+threadMemSize = 5
+Threads per block = 1024
+Number of blocks = 1
+Offset(256
+6, bw= ,  1.46GB/s
+*** Ignoring size parameter; using kernel launch parameters and offset, size=6144
+totalMemSize = 6144
+threadMemSize = 6
+Threads per block = 1024
+Number of blocks = 1
+Offset(512
+6, bw= ,  1.44GB/s
+*** Ignoring size parameter; using kernel launch parameters and offset, size=8192
+totalMemSize = 8192
+threadMemSize = 8
+Threads per block = 1024
+Number of blocks = 1
+Offset(1024
+6, bw= ,  1.45GB/s

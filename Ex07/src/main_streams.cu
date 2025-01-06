@@ -20,7 +20,7 @@
 #include <iomanip>
 
 const static int DEFAULT_NUM_ELEMENTS = 524288;
-const static int DEFAULT_NUM_ITERATIONS = 2;
+const static int DEFAULT_NUM_ITERATIONS = 5;
 const static int DEFAULT_BLOCK_SIZE = 1024;
 const static int DEFAULT_GRID_SIZE = 64;
 

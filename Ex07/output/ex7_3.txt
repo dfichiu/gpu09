@@ -31,14 +31,14 @@
 *** Printing element 400000 in iteration 1
 ***
 *** Position: < 12.7339869| 6.25337601| 14.2335253> [m]
-*** Velocity: <-34.5405006| 95.0522766|-62.3706932> [m/s]
+*** Velocity: <-34.5404091| 95.0523987| -62.371006> [m/s]
 *** Mass: <1.72162799e+13> [kg]
 ***
 ***
 *** Printing element 458751 in iteration 1
 ***
 *** Position: < 6.58709478| 3.74786782|   9.518363> [m]
-*** Velocity: < 72.1155624| 144.636612| 29.3917103> [m/s]
+*** Velocity: < 72.1156921| 144.636688| 29.3920116> [m/s]
 *** Mass: <2.35345494e+11> [kg]
 ***
 ***
@@ -60,35 +60,35 @@
 *** Printing element 0 in iteration 2
 ***
 *** Position: < 17.9995861| 8.47928238| 16.7847252> [m]
-*** Velocity: <-287.572388|  67.475563|-213.797958> [m/s]
+*** Velocity: <-287.572998| 67.4753494|-213.798065> [m/s]
 *** Mass: <1.71463693e+13> [kg]
 ***
 ***
 *** Printing element 1 in iteration 2
 ***
 *** Position: < 19.5245228| 4.27413893| 7.21214294> [m]
-*** Velocity: < -352.14679| 212.017838| 88.7319565> [m/s]
+*** Velocity: <-352.147186| 212.018066| 88.7321014> [m/s]
 *** Mass: <1.64976048e+13> [kg]
 ***
 ***
 *** Printing element 2 in iteration 2
 ***
 *** Position: < 5.99564934| 11.8898878|  10.255208> [m]
-*** Velocity: < 204.638641|-42.2840919| 19.8591862> [m/s]
+*** Velocity: < 204.638596|-42.2841492| 19.8591862> [m/s]
 *** Mass: <1.35048997e+13> [kg]
 ***
 ***
 *** Printing element 400000 in iteration 2
 ***
-*** Position: < 12.7270622|  6.2724185| 14.2210426> [m]
-*** Velocity: < -69.242836| 190.426758|-124.829315> [m/s]
+*** Position: < 12.7270622| 6.27241898| 14.2210426> [m]
+*** Velocity: <-69.2421341| 190.427368|-124.830315> [m/s]
 *** Mass: <1.72162799e+13> [kg]
 ***
 ***
 *** Printing element 458751 in iteration 2
 ***
-*** Position: < 6.60155058|  3.7768116| 9.52424812> [m]
-*** Velocity: < 144.557556| 289.437195| 58.8555489> [m/s]
+*** Position: < 6.60155058|  3.7768116| 9.52424908> [m]
+*** Velocity: < 144.557678| 289.437347| 58.8565407> [m/s]
 *** Mass: <2.35345494e+11> [kg]
 ***
 ***
@@ -105,14 +105,164 @@
 *** Velocity: <          0|          0|          0> [m/s]
 *** Mass: <6.34064208e+12> [kg]
 ***
+*** Iteration 3 ***
+***
+*** Printing element 0 in iteration 3
+***
+*** Position: < 17.9565144| 8.48957634| 16.7527428> [m]
+*** Velocity: <-430.717529| 102.941322|-319.819946> [m/s]
+*** Mass: <1.71463693e+13> [kg]
+***
+***
+*** Printing element 1 in iteration 3
+***
+*** Position: <  19.471817| 4.30600786| 7.22551537> [m]
+*** Velocity: <-527.055969| 318.691345| 133.723068> [m/s]
+*** Mass: <1.64976048e+13> [kg]
+***
+***
+*** Printing element 2 in iteration 3
+***
+*** Position: < 6.02667713| 11.8838863|  10.257946> [m]
+*** Velocity: < 310.276184|-60.0126152| 27.3828106> [m/s]
+*** Mass: <1.35048997e+13> [kg]
+***
+***
+*** Printing element 400000 in iteration 3
+***
+*** Position: < 12.7166414|  6.3010397| 14.2022934> [m]
+*** Velocity: < -104.20826| 286.206696|-187.495682> [m/s]
+*** Mass: <1.72162799e+13> [kg]
+***
+***
+*** Printing element 458751 in iteration 3
+***
+*** Position: < 6.62329531| 3.82024622| 9.53308868> [m]
+*** Velocity: <  217.44603|  434.34726| 88.3945465> [m/s]
+*** Mass: <2.35345494e+11> [kg]
+***
+***
+*** Printing element 500001 in iteration 3
+***
+*** Position: < 11.5845175| 11.7203865| 1.44209445> [m]
+*** Velocity: <          0|          0|          0> [m/s]
+*** Mass: <6.82643214e+12> [kg]
+***
+***
+*** Printing element 500002 in iteration 3
+***
+*** Position: < 1.31200671| 9.34055138| 14.8639364> [m]
+*** Velocity: <          0|          0|          0> [m/s]
+*** Mass: <6.34064208e+12> [kg]
+***
+*** Iteration 4 ***
+***
+*** Printing element 0 in iteration 4
+***
+*** Position: < 17.8989792| 8.50346375| 16.7100792> [m]
+*** Velocity: <-575.352539| 138.877884|-426.629608> [m/s]
+*** Mass: <1.71463693e+13> [kg]
+***
+***
+*** Printing element 1 in iteration 4
+***
+*** Position: < 19.4016056| 4.34858894| 7.24346924> [m]
+*** Velocity: <-702.114929| 425.808563|  179.54007> [m/s]
+*** Mass: <1.64976048e+13> [kg]
+***
+***
+*** Printing element 2 in iteration 4
+***
+*** Position: < 6.06833982| 11.8763905| 10.2613754> [m]
+*** Velocity: <  416.62738|-74.9591751| 34.2985725> [m/s]
+*** Mass: <1.35048997e+13> [kg]
+***
+***
+*** Printing element 400000 in iteration 4
+***
+*** Position: < 12.7026844| 6.33928823| 14.1772423> [m]
+*** Velocity: <-139.569733| 382.485748|-250.506409> [m/s]
+*** Mass: <1.72162799e+13> [kg]
+***
+***
+*** Printing element 458751 in iteration 4
+***
+*** Position: <  6.6523881| 3.87820244| 9.54488945> [m]
+*** Velocity: < 290.929596|  579.56189| 118.009163> [m/s]
+*** Mass: <2.35345494e+11> [kg]
+***
+***
+*** Printing element 500001 in iteration 4
+***
+*** Position: < 11.5845175| 11.7203865| 1.44209445> [m]
+*** Velocity: <          0|          0|          0> [m/s]
+*** Mass: <6.82643214e+12> [kg]
+***
+***
+*** Printing element 500002 in iteration 4
+***
+*** Position: < 1.31200671| 9.34055138| 14.8639364> [m]
+*** Velocity: <          0|          0|          0> [m/s]
+*** Mass: <6.34064208e+12> [kg]
+***
+*** Iteration 5 ***
+***
+*** Printing element 0 in iteration 5
+***
+*** Position: < 17.8268013| 8.52102184| 16.6566238> [m]
+*** Velocity: <-721.788147| 175.580276|-534.545471> [m/s]
+*** Mass: <1.71463693e+13> [kg]
+***
+***
+*** Printing element 1 in iteration 5
+***
+*** Position: < 19.3138199| 4.40196609| 7.26612616> [m]
+*** Velocity: <-877.859863| 533.769958| 226.570801> [m/s]
+*** Mass: <1.64976048e+13> [kg]
+***
+***
+*** Printing element 2 in iteration 5
+***
+*** Position: < 6.12039566| 11.8677425| 10.2654295> [m]
+*** Velocity: < 520.558044|-86.4758759| 40.5377846> [m/s]
+*** Mass: <1.35048997e+13> [kg]
+***
+***
+*** Printing element 400000 in iteration 5
+***
+*** Position: < 12.6851358| 6.38722897| 14.1458416> [m]
+*** Velocity: < -175.48349| 479.406799|-314.007721> [m/s]
+*** Mass: <1.72162799e+13> [kg]
+***
+***
+*** Printing element 458751 in iteration 5
+***
+*** Position: < 6.68890762| 3.95074964| 9.55966568> [m]
+*** Velocity: < 365.194458| 725.471558| 147.759949> [m/s]
+*** Mass: <2.35345494e+11> [kg]
+***
+***
+*** Printing element 500001 in iteration 5
+***
+*** Position: < 11.5845175| 11.7203865| 1.44209445> [m]
+*** Velocity: <          0|          0|          0> [m/s]
+*** Mass: <6.82643214e+12> [kg]
+***
+***
+*** Printing element 500002 in iteration 5
+***
+*** Position: < 1.31200671| 9.34055138| 14.8639364> [m]
+*** Velocity: <          0|          0|          0> [m/s]
+*** Mass: <6.34064208e+12> [kg]
+***
 ***
 *** Results:
 ***    Num Elements: 524288
-***    Num Iterations: 2
+***    Num Iterations: 5
 ***    Threads per block: 1024
 ***    Time to Copy to Device: 0 ms
 ***    Copy Bandwidth: inf GB/s
 ***    Time to Copy from Device: 0 ms
 ***    Copy Bandwidth: inf GB/s
-***    Time for n-Body Computation: 12467.6296 ms
+***    Time for n-Body Computation: 31096.1404 ms
 ***
